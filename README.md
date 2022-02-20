@@ -1,1 +1,1 @@
-https://vzsoares.github.io/matching-game/
+https://vzsoares.github.io/Matching-game/
