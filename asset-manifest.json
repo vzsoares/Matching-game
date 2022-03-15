@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/matching-game/static/css/main.ce8ac7a2.css",
-    "main.js": "/matching-game/static/js/main.faf20c87.js",
-    "static/js/787.0127ff9e.chunk.js": "/matching-game/static/js/787.0127ff9e.chunk.js",
-    "static/media/Slowbro.png": "/matching-game/static/media/Slowbro.4a2d43687b25e8094594.png",
-    "static/media/Mr Mime.png": "/matching-game/static/media/Mr Mime.aa9ec5ed5f8be2aa0428.png",
-    "static/media/Vulpix.png": "/matching-game/static/media/Vulpix.cce8917a69bd389af1d3.png",
-    "static/media/Staryu.png": "/matching-game/static/media/Staryu.077ecd2c6646e3d39fbf.png",
-    "static/media/Nidorino.png": "/matching-game/static/media/Nidorino.259824d2d276aedf15ae.png",
-    "static/media/Squirtle.png": "/matching-game/static/media/Squirtle.5406ef593ec743416dcc.png",
-    "static/media/Pidgeot.png": "/matching-game/static/media/Pidgeot.4bc7de03e128a18d5a9a.png",
-    "static/media/Marowak.png": "/matching-game/static/media/Marowak.6655bbebb16922847559.png",
-    "static/media/Rattata.png": "/matching-game/static/media/Rattata.bd5d6ed8ed2196708787.png",
-    "static/media/Krabby.png": "/matching-game/static/media/Krabby.ac70ebd90ebeb5f2ce7e.png",
-    "static/media/Pikachu.png": "/matching-game/static/media/Pikachu.d20bdd5d52ce4df7f2b0.png",
-    "static/media/Meowth.png": "/matching-game/static/media/Meowth.16f52d4d3097cde83f6d.png",
-    "static/media/Poliwrath.png": "/matching-game/static/media/Poliwrath.83348cbd0d66624d1d34.png",
-    "static/media/card-back3.jpg": "/matching-game/static/media/card-back3.0b4f0b768765ad7bd8bd.jpg",
-    "static/media/Mankey.png": "/matching-game/static/media/Mankey.f6cef9311626451c88ad.png",
-    "index.html": "/matching-game/index.html",
-    "main.ce8ac7a2.css.map": "/matching-game/static/css/main.ce8ac7a2.css.map",
-    "main.faf20c87.js.map": "/matching-game/static/js/main.faf20c87.js.map",
-    "787.0127ff9e.chunk.js.map": "/matching-game/static/js/787.0127ff9e.chunk.js.map"
+    "main.css": "/Matching-game/static/css/main.ce8ac7a2.css",
+    "main.js": "/Matching-game/static/js/main.1368db6b.js",
+    "static/js/787.0127ff9e.chunk.js": "/Matching-game/static/js/787.0127ff9e.chunk.js",
+    "static/media/Slowbro.png": "/Matching-game/static/media/Slowbro.4a2d43687b25e8094594.png",
+    "static/media/Mr Mime.png": "/Matching-game/static/media/Mr Mime.aa9ec5ed5f8be2aa0428.png",
+    "static/media/Vulpix.png": "/Matching-game/static/media/Vulpix.cce8917a69bd389af1d3.png",
+    "static/media/Staryu.png": "/Matching-game/static/media/Staryu.077ecd2c6646e3d39fbf.png",
+    "static/media/Nidorino.png": "/Matching-game/static/media/Nidorino.259824d2d276aedf15ae.png",
+    "static/media/Squirtle.png": "/Matching-game/static/media/Squirtle.5406ef593ec743416dcc.png",
+    "static/media/Pidgeot.png": "/Matching-game/static/media/Pidgeot.4bc7de03e128a18d5a9a.png",
+    "static/media/Marowak.png": "/Matching-game/static/media/Marowak.6655bbebb16922847559.png",
+    "static/media/Rattata.png": "/Matching-game/static/media/Rattata.bd5d6ed8ed2196708787.png",
+    "static/media/Krabby.png": "/Matching-game/static/media/Krabby.ac70ebd90ebeb5f2ce7e.png",
+    "static/media/Pikachu.png": "/Matching-game/static/media/Pikachu.d20bdd5d52ce4df7f2b0.png",
+    "static/media/Meowth.png": "/Matching-game/static/media/Meowth.16f52d4d3097cde83f6d.png",
+    "static/media/Poliwrath.png": "/Matching-game/static/media/Poliwrath.83348cbd0d66624d1d34.png",
+    "static/media/card-back3.jpg": "/Matching-game/static/media/card-back3.0b4f0b768765ad7bd8bd.jpg",
+    "static/media/Mankey.png": "/Matching-game/static/media/Mankey.f6cef9311626451c88ad.png",
+    "index.html": "/Matching-game/index.html",
+    "main.ce8ac7a2.css.map": "/Matching-game/static/css/main.ce8ac7a2.css.map",
+    "main.1368db6b.js.map": "/Matching-game/static/js/main.1368db6b.js.map",
+    "787.0127ff9e.chunk.js.map": "/Matching-game/static/js/787.0127ff9e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ce8ac7a2.css",
-    "static/js/main.faf20c87.js"
+    "static/js/main.1368db6b.js"
   ]
 }
