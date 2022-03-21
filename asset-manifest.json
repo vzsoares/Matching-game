@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Matching-game/static/css/main.ce8ac7a2.css",
-    "main.js": "/Matching-game/static/js/main.1368db6b.js",
+    "main.js": "/Matching-game/static/js/main.066ae196.js",
     "static/js/787.0127ff9e.chunk.js": "/Matching-game/static/js/787.0127ff9e.chunk.js",
     "static/media/Slowbro.png": "/Matching-game/static/media/Slowbro.4a2d43687b25e8094594.png",
     "static/media/Mr Mime.png": "/Matching-game/static/media/Mr Mime.aa9ec5ed5f8be2aa0428.png",
@@ -20,11 +20,11 @@
     "static/media/Mankey.png": "/Matching-game/static/media/Mankey.f6cef9311626451c88ad.png",
     "index.html": "/Matching-game/index.html",
     "main.ce8ac7a2.css.map": "/Matching-game/static/css/main.ce8ac7a2.css.map",
-    "main.1368db6b.js.map": "/Matching-game/static/js/main.1368db6b.js.map",
+    "main.066ae196.js.map": "/Matching-game/static/js/main.066ae196.js.map",
     "787.0127ff9e.chunk.js.map": "/Matching-game/static/js/787.0127ff9e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ce8ac7a2.css",
-    "static/js/main.1368db6b.js"
+    "static/js/main.066ae196.js"
   ]
 }
