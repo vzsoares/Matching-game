@@ -1,6 +1,7 @@
 import "./App.css"
 import cardBack from "./images/card-back3.jpg"
 import { useEffect, useState, useReducer } from "react"
+import { FaGithubSquare } from "react-icons/fa"
 
 function App() {
   // states
@@ -213,7 +214,7 @@ function App() {
   // main return
   return (
     <>
-      <main>
+      <main style={{ minHeight: "85vh" }}>
         <Cartas />
         <button onClick={(e) => startGame(e)} style={buttonStyle}>
           começar
@@ -249,6 +250,24 @@ function App() {
           </a>
         </button>
       </main>
+      {/* gitHub ref */}
+      <div
+        className='github'
+        style={{
+          textAlign: "center",
+        }}
+      >
+        <a
+          href='https://github.com/vzsoares'
+          target='_blank'
+          rel='noreferrer'
+          className='github'
+        >
+          <FaGithubSquare
+            style={{ color: "black", fontSize: "3rem", marginTop: "0.5rem" }}
+          />
+        </a>
+      </div>
     </>
   )
 }
