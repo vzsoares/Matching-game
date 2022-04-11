@@ -217,7 +217,7 @@ function App() {
       <main style={{ minHeight: "85vh" }}>
         <Cartas />
         <button onClick={(e) => startGame(e)} style={buttonStyle}>
-          começar
+          start
         </button>
         <div
           className='errors-container'
