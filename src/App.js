@@ -1,24 +1,23 @@
-import "./App.css"
-import cardBack from "./images/card-back3.jpg"
-import { useEffect, useState, useReducer } from "react"
-import { FaGithubSquare } from "react-icons/fa"
+import cardBack from "./images/card-back3.jpg";
+import { useEffect, useState, useReducer } from "react";
+import { FaGithubSquare } from "react-icons/fa";
 
 function App() {
   // states
-  const folders = "pokemons lordotr programmingl"
+  const folders = "pokemons lordotr programmingl";
   const images = importAll(
     require.context(`./images/pokemons`, false, /\.(png|jpe?g|svg)$/)
-  )
-  const [selectedCards, setSelectedCards] = useState([])
-  const [errors, setError] = useState(0)
-  const [youLost, setYouLost] = useState("")
-  const [winnerSelections, setWinnerSelections] = useState([])
-  const [displayResetButton, setDisplayResetButton] = useState("none")
+  );
+  const [selectedCards, setSelectedCards] = useState([]);
+  const [errors, setError] = useState(0);
+  const [youLost, setYouLost] = useState("");
+  const [winnerSelections, setWinnerSelections] = useState([]);
+  const [displayResetButton, setDisplayResetButton] = useState("none");
   const [cardsArray, setCardsArray] = useState(
     shuffle(
       Object.entries(images)
         .map((e) => {
-          return e[0].slice(0, -4)
+          return e[0].slice(0, -4);
         })
         .map((e) => {
           return {
@@ -26,12 +25,12 @@ function App() {
             backImg: cardBack,
             frontImg: images[`${e}.png`],
             turned: false,
-          }
+          };
         })
         .concat(
           Object.entries(images)
             .map((e) => {
-              return e[0].slice(0, -4)
+              return e[0].slice(0, -4);
             })
             .map((e) => {
               return {
@@ -39,120 +38,120 @@ function App() {
                 backImg: cardBack,
                 frontImg: images[`${e}.png`],
                 turned: false,
-              }
+              };
             })
         )
     )
-  )
+  );
 
   const [data, setData] = useState({
     cartas: cardsArray,
-  })
-  const [playing, setPlaying] = useState("")
+  });
+  const [playing, setPlaying] = useState("");
 
   // shuffle function
   function shuffle(array) {
     let currentIndex = array.length,
-      randomIndex
+      randomIndex;
     while (currentIndex != 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex)
-      currentIndex--
-      ;[array[currentIndex], array[randomIndex]] = [
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      [array[currentIndex], array[randomIndex]] = [
         array[randomIndex],
         array[currentIndex],
-      ]
+      ];
     }
-    return array
+    return array;
   }
   // end of shuffle function
   // import img's function
   function importAll(r) {
-    let images = {}
+    let images = {};
     r.keys().map((item, index) => {
-      images[item.replace("./", "")] = r(item)
-    })
-    return images
+      images[item.replace("./", "")] = r(item);
+    });
+    return images;
   }
   // end of img's function
   // handleCartaClick function
   const handleCartaClick = (event, index, carta) => {
-    event.preventDefault()
+    event.preventDefault();
 
     if (!playing) {
-      return
+      return;
     }
-    setData({ ...data })
-    data.cartas[index].turned = true
-    setSelectedCards(selectedCards.concat([[carta.name, index]]))
+    setData({ ...data });
+    data.cartas[index].turned = true;
+    setSelectedCards(selectedCards.concat([[carta.name, index]]));
 
     if (selectedCards.length >= 2) {
-      setError(errors + 1)
-      setSelectedCards([[carta.name, index]])
+      setError(errors + 1);
+      setSelectedCards([[carta.name, index]]);
     }
-  }
+  };
   // end of handleCartaClick
   const checkCartas = () => {
     if (!playing) {
-      return
+      return;
     }
     if (selectedCards.length >= 2) {
       selectedCards.forEach((e) => {
-        data.cartas[e[1]].turned = false
-      })
+        data.cartas[e[1]].turned = false;
+      });
       if (
         errors === 2 &&
         selectedCards.length === 2 &&
         selectedCards[0][0] !== selectedCards[1][0]
       ) {
-        setError(3)
-        setPlaying("")
+        setError(3);
+        setPlaying("");
         data.cartas.forEach((e) => {
-          e.turned = true
-        })
-        setDisplayResetButton("block")
-        setYouLost("you lost")
+          e.turned = true;
+        });
+        setDisplayResetButton("block");
+        setYouLost("you lost");
       }
 
       // if match
       if (selectedCards[0][0] === selectedCards[1][0]) {
-        setWinnerSelections(winnerSelections.concat([selectedCards]))
+        setWinnerSelections(winnerSelections.concat([selectedCards]));
         selectedCards.forEach((e) => {
-          data.cartas[e[1]].turned = true
-        })
-        setSelectedCards([])
+          data.cartas[e[1]].turned = true;
+        });
+        setSelectedCards([]);
       }
     }
     winnerSelections.forEach((e) => {
       e.forEach((x) => {
-        data.cartas[x[1]].turned = true
-      })
-    })
-  }
+        data.cartas[x[1]].turned = true;
+      });
+    });
+  };
   const startGame = (e) => {
-    e.target.style.display = "none"
-    setSelectedCards([])
-    setError(0)
-    setPlaying("playing")
+    e.target.style.display = "none";
+    setSelectedCards([]);
+    setError(0);
+    setPlaying("playing");
     data.cartas.forEach((e) => {
-      e.turned = true
-      setData({ ...data })
-    })
+      e.turned = true;
+      setData({ ...data });
+    });
     setTimeout(() => {
       data.cartas.forEach((e) => {
-        e.turned = false
-        setData({ ...data })
-      })
-    }, 5000)
-  }
+        e.turned = false;
+        setData({ ...data });
+      });
+    }, 5000);
+  };
   // useEffect
   useEffect(() => {
-    checkCartas()
-  }, [selectedCards, data])
+    checkCartas();
+  }, [selectedCards, data]);
   // styles
   const imgStyle = {
     width: "80px",
     height: "180px",
-  }
+  };
   const buttonStyle = {
     fontFamily: "Roboto",
     fontWeight: "700",
@@ -171,10 +170,10 @@ function App() {
     textDecoration: "none",
     width: "auto",
     padding: "0.25rem",
-  }
+  };
   // Cartas Component
   function Cartas() {
-    const cartasContainerStyle = {}
+    const cartasContainerStyle = {};
     // cartas return
     return (
       <div
@@ -205,10 +204,10 @@ function App() {
                 />
               </a>
             </div>
-          )
+          );
         })}
       </div>
-    )
+    );
   }
   // end of cartas component
   // main return
@@ -269,7 +268,7 @@ function App() {
         </a>
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
