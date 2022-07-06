@@ -1,10 +1,10 @@
 import cardBack from "./images/card-back3.jpg";
-import { useEffect, useState, useReducer } from "react";
+import { useEffect, useState } from "react";
 import { FaGithubSquare } from "react-icons/fa";
 
 function App() {
   // states
-  const folders = "pokemons lordotr programmingl";
+  const folders = ["pokemons", "lordotr", "programmingl"];
   const images = importAll(
     require.context(`./images/pokemons`, false, /\.(png|jpe?g|svg)$/)
   );
@@ -13,34 +13,20 @@ function App() {
   const [youLost, setYouLost] = useState("");
   const [winnerSelections, setWinnerSelections] = useState([]);
   const [displayResetButton, setDisplayResetButton] = useState("none");
-  const [cardsArray, setCardsArray] = useState(
+
+  const [cardsArray] = useState(
     shuffle(
       Object.entries(images)
         .map((e) => {
-          return e[0].slice(0, -4);
-        })
-        .map((e) => {
-          return {
-            name: e,
+          const result = {
+            name: e[0].slice(0, -4),
             backImg: cardBack,
-            frontImg: images[`${e}.png`],
+            frontImg: e[1],
             turned: false,
           };
+          return [{ ...result }, { ...result }];
         })
-        .concat(
-          Object.entries(images)
-            .map((e) => {
-              return e[0].slice(0, -4);
-            })
-            .map((e) => {
-              return {
-                name: e,
-                backImg: cardBack,
-                frontImg: images[`${e}.png`],
-                turned: false,
-              };
-            })
-        )
+        .flat(1)
     )
   );
 
@@ -53,7 +39,7 @@ function App() {
   function shuffle(array) {
     let currentIndex = array.length,
       randomIndex;
-    while (currentIndex != 0) {
+    while (currentIndex !== 0) {
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
       [array[currentIndex], array[randomIndex]] = [
@@ -64,6 +50,7 @@ function App() {
     return array;
   }
   // end of shuffle function
+
   // import img's function
   function importAll(r) {
     let images = {};
@@ -73,6 +60,7 @@ function App() {
     return images;
   }
   // end of img's function
+
   // handleCartaClick function
   const handleCartaClick = (event, index, carta) => {
     event.preventDefault();
